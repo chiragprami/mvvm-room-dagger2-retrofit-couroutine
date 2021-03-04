@@ -13,9 +13,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class UserRepo  @Inject constructor(private val userDao: UserDao) {
+class UserRepo   constructor(private val userDao: UserDao) {
     @SuppressLint("CheckResult")
     fun listOfUser(
+       data:GenReques<List<UserEntity>>
     ) {
         RestClient.getClient(RestClient.APIType.NOAUTH)
             .create(UserApi::class.java)
@@ -31,7 +32,7 @@ class UserRepo  @Inject constructor(private val userDao: UserDao) {
                             it.saveArticles(listOfUsers);
                         }
                     }
-                  //  data.liveData.value = listOfUsers
+                   data.liveData.value = listOfUsers
                 }, error = { msg, code ->
                     var listOfResult: List<UserEntity>? = null
                     userDao?.let {
@@ -40,9 +41,9 @@ class UserRepo  @Inject constructor(private val userDao: UserDao) {
                         };
                     }
                     if (listOfResult != null) {
-                      //  data.liveData.value = listOfResult
+                     data.liveData.value = listOfResult
                     } else {
-                      //  data.errorData.value = msg
+                        data.errorData.value = msg
                     }
                 })
             )

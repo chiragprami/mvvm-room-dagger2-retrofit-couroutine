@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.app.work.demo.R
 import com.app.work.demo.base.BaseFragment
-import com.app.work.demo.presentation.MainViewModel
+import com.app.work.demo.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
 import loge
 
@@ -21,15 +21,13 @@ class MainFragment : BaseFragment<MainViewModel>() {
     }
 
     private fun handleResult() {
-       /* viewModel.observeUserResponse().observe(viewLifecycleOwner, Observer {
-
+        viewModel.observeUserResponse().observe(viewLifecycleOwner, Observer {
             it?.let { data ->
-                val adapter = UsersAdapter(mContext = this, list = data)
-                rvDat.adapter = adapter
+                rvDat.adapter = UsersAdapter(mContext = this, list = data)
             }
-
             loge("data_list ${it.size.toString()}")
-        })*/
+        })
+        viewModel.getData()
     }
 
     override fun getViewModel(): Class<MainViewModel> {

@@ -1,11 +1,9 @@
-package com.app.work.demo.presentation
+package com.app.work.demo.viewmodel
 
-import androidx.annotation.NonNull
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import javax.inject.Inject
 import javax.inject.Provider
-import javax.inject.Singleton
 
 
 class ViewModelFactory

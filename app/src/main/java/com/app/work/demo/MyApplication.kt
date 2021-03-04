@@ -2,6 +2,8 @@ package com.app.work.demo
 
 import android.app.Activity
 import android.app.Application
+import androidx.room.Room
+import com.app.work.demo.data.local.UserDataBase
 import com.app.work.demo.di.components.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -32,11 +34,13 @@ class MyApplication : Application(), HasActivityInjector {
 
     companion object {
         var appContext: MyApplication? = null
+        var db: UserDataBase? = null
             private set
-
         @Synchronized
         private fun setInstance(app: MyApplication) {
             appContext = app
+            db = Room.databaseBuilder(app, UserDataBase::class.java, "users_result.db")
+                .build();
         }
     }
 }
