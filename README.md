@@ -18,3 +18,7 @@ di: Dependency providing classes using Dagger2.
 ui: View classes along with their corresponding ViewModel.
 
 utils: Utility classes.
+
+viewModel : It's contains viewModels  
+
+domain : It's contain apis methods and classes 
