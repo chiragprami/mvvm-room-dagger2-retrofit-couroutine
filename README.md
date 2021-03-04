@@ -1,5 +1,20 @@
-# mvvm-room-dagger2-retrofit-couroutine
-Retrieving online or offline data by MVVM, Retrofit, Dagger2, Room tools.
+
+
+
+
+
+
+MVVM Architectural pattern
+
+Offline Support
+
+Unit test demonstration using JUnit and Mockito
+
+UI unit test demonstartion using Espresso
+
+Gradle scripts for running sonarqube static code analysis, code coverage, etc.
+
+The application has been built with offline support. It has been designed using Android Architecture components with Room for offline data caching.
 
 
 ## Programming tools
@@ -20,7 +35,9 @@ d) Repository pattern
 
 e) Gson 
 
-##Package Structure
+
+
+## Package Structure
 
 
 data: It contains all the data accessing and manipulating components.
