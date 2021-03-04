@@ -17,8 +17,7 @@ abstract class BaseFragment<V : ViewModel?> : Fragment() {
 
     protected var viewModel: V? = null
 
-    @get:LayoutRes
-    abstract val layoutRes: Int
+
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         AndroidSupportInjection.inject(this)

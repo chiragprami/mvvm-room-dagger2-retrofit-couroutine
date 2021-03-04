@@ -18,8 +18,6 @@ abstract class BaseActivity : FragmentActivity(),
     @Inject
     lateinit var  fragmentAndroidInjector: DispatchingAndroidInjector<Fragment>
 
-    @get:LayoutRes
-    protected abstract val layoutRes: Int
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)

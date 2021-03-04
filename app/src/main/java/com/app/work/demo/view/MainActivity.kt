@@ -7,12 +7,10 @@ import com.app.work.demo.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 
-    override val layoutRes: Int
-        get() =  R.layout.main_activity
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                     .replace(R.id.container, MainFragment.newInstance())

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Dummy"
         android:padding="16dp"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:id="@+id/tvUserInfo"/>
 

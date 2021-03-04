@@ -28,11 +28,7 @@ class UserRepo   @Inject constructor(private val userDao: UserDao) {
                 genObserver(JsonObject::class.java, success = { dataObj ->
                     var result = dataObj.getResult(UserResponse::class.java);
                     var listOfUsers = result.results;
-                    if (listOfUsers != null) {
-                        userDao?.let {
-                            it.saveArticles(listOfUsers);
-                        }
-                    }
+
                    data.value = listOfUsers
                 }, error = { msg, code ->
                     var listOfResult: List<UserEntity>? = null

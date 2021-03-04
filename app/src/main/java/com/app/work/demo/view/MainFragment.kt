@@ -1,6 +1,9 @@
 package com.app.work.demo.view
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.app.work.demo.R
 import com.app.work.demo.base.BaseFragment
@@ -15,6 +18,13 @@ class MainFragment : BaseFragment<MainViewModel>() {
     }
 
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return inflater.inflate(R.layout.main_fragment, container, false)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         handleResult()
@@ -24,6 +34,7 @@ class MainFragment : BaseFragment<MainViewModel>() {
         viewModel?.observeUserResponse()?.observe(viewLifecycleOwner, Observer {
             it?.let { data ->
                 rvDat.adapter = UsersAdapter(mContext = this, list = data)
+                viewModel?.updateDatabase()
             }
             loge("data_list ${it.size.toString()}")
         })
@@ -34,7 +45,6 @@ class MainFragment : BaseFragment<MainViewModel>() {
         return MainViewModel::class.java
     }
 
-    override val layoutRes: Int
-        get() = R.layout.main_fragment
+
 
 }
