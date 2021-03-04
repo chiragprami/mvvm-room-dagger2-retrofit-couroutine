@@ -1,4 +1,4 @@
-package com.app.work
+package com.app.work.demo
 
 import android.app.Activity
 import android.app.Application
