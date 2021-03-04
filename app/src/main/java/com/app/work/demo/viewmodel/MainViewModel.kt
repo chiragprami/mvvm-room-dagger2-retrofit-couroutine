@@ -10,14 +10,12 @@ import com.app.work.demo.model.UserEntity
 import javax.inject.Inject
 
 
-class MainViewModel @Inject constructor() :
+class MainViewModel @Inject constructor(val userRepo: UserRepo) :
     ViewModel() {
-
     private val userResponse: MutableLiveData<List<UserEntity>> = MutableLiveData<List<UserEntity>>()
 
-
     fun  getData(){
-        MyApplication.db?.userDao()?.let { UserRepo(it).listOfUser(userResponse) }
+        userRepo.let { it.listOfUser(userResponse) }
     }
 
     fun observeUserResponse(): MutableLiveData<List<UserEntity>> {

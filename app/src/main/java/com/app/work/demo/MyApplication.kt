@@ -34,13 +34,11 @@ class MyApplication : Application(), HasActivityInjector {
 
     companion object {
         var appContext: MyApplication? = null
-        var db: UserDataBase? = null
             private set
         @Synchronized
         private fun setInstance(app: MyApplication) {
             appContext = app
-            db = Room.databaseBuilder(app, UserDataBase::class.java, "users_result.db")
-                .build();
+
         }
     }
 }

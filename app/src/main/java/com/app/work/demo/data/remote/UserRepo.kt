@@ -14,7 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class UserRepo   constructor(private val userDao: UserDao) {
+class UserRepo   @Inject constructor(private val userDao: UserDao) {
     @SuppressLint("CheckResult")
     fun listOfUser(
    data: MutableLiveData<List<UserEntity>>

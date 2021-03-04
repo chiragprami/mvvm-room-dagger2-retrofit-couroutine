@@ -9,12 +9,13 @@ import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
+
 abstract class BaseFragment<V : ViewModel?> : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     abstract fun getViewModel(): Class<V>
 
-    var viewModel: V = null!!
+    protected var viewModel: V? = null
 
     @get:LayoutRes
     abstract val layoutRes: Int

@@ -21,13 +21,13 @@ class MainFragment : BaseFragment<MainViewModel>() {
     }
 
     private fun handleResult() {
-        viewModel.observeUserResponse().observe(viewLifecycleOwner, Observer {
+        viewModel?.observeUserResponse()?.observe(viewLifecycleOwner, Observer {
             it?.let { data ->
                 rvDat.adapter = UsersAdapter(mContext = this, list = data)
             }
             loge("data_list ${it.size.toString()}")
         })
-        viewModel.getData()
+        viewModel?.getData()
     }
 
     override fun getViewModel(): Class<MainViewModel> {
