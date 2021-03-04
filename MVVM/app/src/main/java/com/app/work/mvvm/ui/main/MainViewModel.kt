@@ -60,4 +60,3 @@ fun <T> genObserver(serviceClass: Class<T>, success: (T) -> Unit, error: (String
     }
 
 
-

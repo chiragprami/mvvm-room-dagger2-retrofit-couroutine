@@ -1,14 +1,18 @@
-package com.app.work.demo
+package com.app.work.demo.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.work.demo.ui.main.MainFragment
+import com.app.work.demo.R
+import com.app.work.demo.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : BaseActivity() {
+
+    override val layoutRes: Int
+        get() =  R.layout.main_activity
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                     .replace(R.id.container, MainFragment.newInstance())
