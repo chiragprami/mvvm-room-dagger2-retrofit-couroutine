@@ -2,14 +2,26 @@
 Retrieving online or offline data by MVVM, Retrofit, Dagger2, Room tools.
 
 
-## Retrieving list of data in offline mode.
+## Programming tools
 
-## MVVM 
-## Dagger2
-## Room 
-## Retrofit
+a) Android Architectural Components
 
-## The app has following packages:
+b) Dagger 2 for Dependency Injection
+
+c) MVVM
+
+d) Retrofit with Okhttp
+
+e) Room for data caching
+
+f) JUnit and Mockito for Unit testing
+
+d) Repository pattern
+
+e) Gson 
+
+##Package Structure
+
 
 data: It contains all the data accessing and manipulating components.
 
