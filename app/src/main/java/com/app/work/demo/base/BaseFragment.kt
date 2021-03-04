@@ -12,7 +12,7 @@ import javax.inject.Inject
 abstract class BaseFragment<V : ViewModel?> : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    var viewModel: V = null!!
+    lateinit var viewModel: V
     abstract fun getViewModel(): Class<V>
 
     @get:LayoutRes
